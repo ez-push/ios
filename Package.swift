@@ -22,7 +22,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "EZPushCore",
-            url: "https://sdk.ez-push.cloud/ios/core/1.3.9/EZPushCore.zip",
+            url: "https://sdk.ez-push.cloud/ios/core/1.3.9/EZPushCore-1.3.9.zip",
             checksum: "8d677adfe6c925fa43c14cabd12eae279893e94bb50ef0f3e6607dac32280919"
         )
     ]
