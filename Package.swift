@@ -11,17 +11,19 @@ let package = Package(
     products: [
         .library(
             name: "EZPush",
-            targets: ["EZPush"]
-        ),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/ez-push/ios-core", exact: "1.3.13")
+            targets: ["EZPush", "EZPushCore"]
+        )
     ],
     targets: [
         .binaryTarget(
             name: "EZPush",
             url: "https://sdk.ez-push.cloud/ios/sdk/1.0.5/EZPush-1.0.5.zip",
             checksum: "c2d442eb44bcf1f8999cac55be2c5356b752209c68b64478f31a9352e0de95d9"
+        ),
+        .binaryTarget(
+            name: "EZPushCore",
+            url: "https://sdk.ez-push.cloud/ios/core/1.3.9/EZPushCore.zip",
+            checksum: "8d677adfe6c925fa43c14cabd12eae279893e94bb50ef0f3e6607dac32280919"
         )
     ]
 )
