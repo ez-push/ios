@@ -1,28 +1,55 @@
-# EZPush
+# EZPush SDK
 
-![Swift Version](https://img.shields.io/badge/swift-5.0%2B-orange.svg)
-[![GitHub License](https://img.shields.io/github/license/ez-push/ios)](LICENSE)
+## Menu
 
-EZPush is a Swift package that simplifies push notification handling in iOS applications.
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#Usage)
 
-## Features
+## Requirements
 
-- Easy-to-use API for receiving push notifications.
-- Support remote notifications.
-- Built-in support for common notification types.
-- Extensible for custom notification handling.
+![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg) ![iOS 13.0+](https://img.shields.io/badge/iOS-13+-green.svg)
+
+## Documentation
 
 ## Installation
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate `EZPush` into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+target '<Your Target Name>' do
+    platform :ios, '13.0'
+    pod 'EZPush'
+end
+
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 
 ### Swift Package Manager
 
 You can use the Swift Package Manager to install EZPush into your Xcode project. Follow these steps:
 
 1. Open your project in Xcode.
-2. Click on "File" -> "Swift Packages" -> "Add Package Dependency..."
+2. Select "File" -> "Swift Packages" -> "Add Package Dependencies..."
 3. Enter the URL of this repository: `https://github.com/ez-push/ios`
-4. Click "Next" and select the version you'd like to use.
-5. Click "Finish" to add EZPush to your project.
+4. Select the version you'd like to use and click "Add Package".
 
 ## Usage
 
@@ -30,3 +57,18 @@ To get started with EZPush, import the module into your Swift code:
 
 ```swift
 import EZPush
+```
+
+Request for Permission
+
+```swift
+EZPush.current.requestForPushNotificationPermission([.alert, .badge, .sound]) { _, _ in }
+```
+
+Configure EZPush
+
+```swift
+let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY")
+EZPush.current.configure(config)
+EZPush.current.update(pushNotificationToken: "PUSH_NOTIFICATION_TOKEN") { _, _ in }
+```
