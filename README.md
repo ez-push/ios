@@ -4,7 +4,7 @@
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#Usage)
+- [Usage](#usage)
 
 ## Requirements
 
@@ -68,7 +68,7 @@ EZPush.current.requestForPushNotificationPermission([.alert, .badge, .sound]) { 
 Configure EZPush
 
 ```swift
-let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY")
+let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY", showDebugInfo: true)
 EZPush.current.configure(config)
-EZPush.current.update(pushNotificationToken: "PUSH_NOTIFICATION_TOKEN") { _, _ in }
+EZPush.current.initialize(pushNotificationToken: "PUSH_NOTIFICATION_TOKEN") { _, _ in }
 ```
