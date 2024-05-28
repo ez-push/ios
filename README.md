@@ -2,9 +2,15 @@
 
 ## Menu
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
+- [EZPush SDK](#ezpush-sdk)
+  - [Menu](#menu)
+  - [Requirements](#requirements)
+  - [Documentation](#documentation)
+  - [Installation](#installation)
+    - [CocoaPods](#cocoapods)
+    - [Swift Package Manager](#swift-package-manager)
+  - [Usage](#usage)
+  - [Setup App Delegate](#setup-app-delegate)
 
 ## Requirements
 
@@ -53,6 +59,20 @@ You can use the Swift Package Manager to install EZPush into your Xcode project.
 
 ## Usage
 
+## Setup App Delegate
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+    application.registerForRemoteNotifications()
+    EZPush.current.registerPushNotificationDelegate() // EZPush must handle incoming notifications
+    return true
+}
+
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    // TODO: store device token for EZ-Push initialization
+}
+```
+
 To get started with EZPush, import the module into your Swift code:
 
 ```swift
@@ -68,7 +88,7 @@ EZPush.current.requestForPushNotificationPermission([.alert, .badge, .sound]) { 
 Configure EZPush
 
 ```swift
-let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY", showDebugInfo: true)
+let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY", showDebugInfo: true, groupName: "YOUR_GROUP_NAME")
 EZPush.current.configure(config)
 EZPush.current.initialize(pushNotificationToken: "PUSH_NOTIFICATION_TOKEN") { _, _ in }
 ```
