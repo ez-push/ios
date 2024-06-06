@@ -12,6 +12,7 @@
   - [Usage](#usage)
   - [Setup App Delegate](#setup-app-delegate)
 
+
 ## Requirements
 
 ![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg) ![iOS 13.0+](https://img.shields.io/badge/iOS-13+-green.svg)
