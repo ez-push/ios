@@ -17,13 +17,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "EZPush",
-            url: "https://sdk.ez-push.cloud/ios/sdk/3.0.0/EZPush.zip",
-            checksum: "ae6c3cd783ddf9116c1cfc6f4c85e6dc94efcfe64e63e61fd35ed290a75b2c46"
+            url: "https://sdk.ez-push.cloud/ios/sdk/3.1.0/EZPush.zip",
+            checksum: "b18d2ea7149388a827a73c4e8dba1296b20d58e3a9faf9cbb6145c0a0a367bf1"
         ),
         .binaryTarget(
             name: "EZPushCore",
-            url: "https://sdk.ez-push.cloud/ios/core/3.0.3/EZPushCore.zip",
-            checksum: "14b8ae529a5409bdb4e0c91c604c975f02596a48e7d30fde1726719f7bf1300e"
+            url: "https://sdk.ez-push.cloud/ios/core/3.0.6/EZPushCore.zip",
+            checksum: "1f3cd925086c57d5ca7c5602988140996c43fff685cc74c981d78996c53e8935"
         )
     ]
 )
