@@ -90,6 +90,6 @@ Configure EZPush
 
 ```swift
 let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY", showDebugInfo: true, groupName: "YOUR_GROUP_NAME")
-EZPush.current.configure(config)
+EZPush.current.configure(config, startPeriodicSync: Bool)
 EZPush.current.initialize(pushNotificationToken: "PUSH_NOTIFICATION_TOKEN") { _, _ in }
 ```
