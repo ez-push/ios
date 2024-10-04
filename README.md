@@ -11,6 +11,7 @@
     - [Swift Package Manager](#swift-package-manager)
   - [Usage](#usage)
   - [Setup App Delegate](#setup-app-delegate)
+  - [Contributing](#contributing)
 
 
 ## Requirements
@@ -93,3 +94,9 @@ let config = EZPushConfiguration(licenseKey: "YOUR_LICENSE_KEY", showDebugInfo: 
 EZPush.current.configure(config, startPeriodicSync: Bool)
 EZPush.current.initialize(pushNotificationToken: "PUSH_NOTIFICATION_TOKEN") { _, _ in }
 ```
+
+## Contributing
+
+- Updating the EZPushCore Version:
+  - change the Version of the Package Dependencies in `iOS Example.xcodeproj` and `EZPush.xcodeproj`
+  - change the Version in the `CoreVersion` file
